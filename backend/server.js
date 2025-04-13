@@ -6,6 +6,7 @@ import userRouter from "./routes/userRoute.js"
 import 'dotenv/config'
 import cartRouter from "./routes/cartRoute.js"
 import orderRouter from "./routes/orderRoute.js"
+import chatbotRouter from "./routes/chatbotRoute.js"
 
 //app configuration
 const app = express()
@@ -16,6 +17,7 @@ app.use(express.json())
 app.use(cors())// access any backend from any frontend 
 app.use("/api/cart",cartRouter)
 app.use("/api/order",orderRouter)
+app.use('/dialogflow', chatbotRouter); 
 
 //DB connextion 
 connectDB();
@@ -34,5 +36,6 @@ app.get("/",(req,res)=>{
 app.listen(port,()=>{
     console.log(`Server Started on http://localhost:${port}`)
 })
+
 
 //mongodb+srv://tesnimyounes:14037534@cluster0.xzvavgs.mongodb.net/?

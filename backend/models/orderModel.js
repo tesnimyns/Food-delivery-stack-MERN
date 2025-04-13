@@ -1,12 +1,13 @@
 import mongoose from "mongoose"
 
 const orderSchema = new mongoose.Schema({
+    order_id:{type:Number,required:true},
     userId:{type:String,required:true},
     items:{type:Array,required:true},
     amount:{type:Number,required:true},
     address:{type:Object,required:true},
     status:{type:String,required:true},
-    data:{type:Date,default:Date.now()},
+    date:{type:Date,default:Date.now()},
     payment:{type:Boolean,default:false}
 })
 

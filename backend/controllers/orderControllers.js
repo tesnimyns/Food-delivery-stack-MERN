@@ -1,6 +1,12 @@
 import orderModel from "../models/orderModel.js";
 import userModel from '../models/userModel.js';
 import Stripe from 'stripe';
+import crypto from 'crypto';
+import mongoose from 'mongoose';
+
+
+
+
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -11,6 +17,23 @@ const getConversionRate = async () => {
     return data.rates.EUR; // Taux de TND à EUR
 };
 
+// Modèle pour le compteur
+const counterSchema = new mongoose.Schema({
+    _id: String,
+    sequence_value: Number,
+});
+const Counter = mongoose.model("Counter", counterSchema);
+  
+  // Fonction pour obtenir le prochain ID incrémental
+const getNextOrderId = async () => {
+    const counter = await Counter.findByIdAndUpdate(
+        { _id: "order_id" },
+        { $inc: { sequence_value: 1 } },
+        { new: true, upsert: true } // Crée le document s'il n'existe pas
+    );
+    return counter.sequence_value;
+};
+
 // Placer la commande pour le frontend
 const placeOrder = async (req, res) => {
     const frontend_url = "http://localhost:5174";
@@ -18,7 +41,20 @@ const placeOrder = async (req, res) => {
     try {
         const conversionRate = await getConversionRate();
 
+        let order_id;
+        let isUnique = false;
+
+        while (!isUnique) {
+            order_id = generateRandomOrderId();
+            const existingOrder = await orderModel.findOne({ order_id: order_id });
+            if (!existingOrder) {
+                isUnique = true;
+            }
+        }
+
+
         const newOrder = new orderModel({
+            order_id : order_id,
             userId: req.body.userId,
             items: req.body.items,
             amount: req.body.amount,

@@ -11,6 +11,7 @@ import LoginPopup from './components/LoginPopup/LoginPopup.tsx';
 import AboutUs from './components/AboutUs/AboutUs.tsx';
 import Verify from './pages/Verify/Verify.tsx';
 import Myorders from './pages/Myorders/Myorders.tsx';
+import Chatbot from './components/Chatbot/Chatbot.jsx'
 
 
 
@@ -41,7 +42,10 @@ const App = () => {
       </Routes>
        <AppDownload/> 
        <AboutUs/>
+       <Chatbot />
       <Footer/>
+
+      
 
     </div>
     </>
