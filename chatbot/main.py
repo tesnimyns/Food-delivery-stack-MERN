@@ -2,8 +2,60 @@ from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 import BD_helper  
 import generic_helper
+from fastapi.middleware.cors import CORSMiddleware
+import requests
+
+
 
 app = FastAPI()
+
+# Autoriser le frontend React (localhost:3000 ou tout domaine)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Pour plus de sécurité, remplacer par ["http://localhost:3000"]
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.post("/chat")
+async def chat_from_frontend(request: Request):
+    body = await request.json()
+    user_message = body.get("message", "")
+
+    # ⚠️ Remplace ceci par ton vrai ID de projet Dialogflow
+    dialogflow_url = "https://dialogflow.cloud.google.com/#/agent/g-chatbot-for-food-delive-qo9m"
+
+    # ⚠️ Token d'accès (compte de service avec rôle Dialogflow API Client)
+    headers = {
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN",
+        "Content-Type": "application/json"
+    }
+
+    # Structure attendue par Dialogflow
+    payload = {
+        "queryInput": {
+            "text": {
+                "text": user_message,
+                "languageCode": "en"
+            }
+        }
+    }
+
+    try:
+        response = requests.post(dialogflow_url, headers=headers, json=payload)
+        response_data = response.json()
+
+        fulfillment = response_data.get("queryResult", {}).get("fulfillmentText", "Je n'ai pas compris.")
+        return {"response": fulfillment}
+
+    except Exception as e:
+        print("Erreur :", str(e))
+        return {"response": "Une erreur est survenue côté serveur."}
+
+
+
+
 
 inprogress_orders = {}
 
@@ -162,6 +214,5 @@ async def track_order(parameters: dict, session_id:str):
     
 
     return JSONResponse(content={"fulfillmentText": fulfillment_text})
-
 
 

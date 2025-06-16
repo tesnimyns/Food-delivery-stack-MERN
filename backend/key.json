@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "g-chatbot-for-food-delive-qo9m",
+  "private_key_id": "5dcdb1f2842eaf6f613829d9a07bcdb609d47231",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCLdju00P2qsC+S\n583hlM9uNOsnnK/fxh3JxXJGd00zjOXlgwbZxeH8vs3M7if4K7vmlvMs38WM3fGj\nkuZRUwdXcEXycxYbN30iDylkjCYBwTFUc4TG9vBf0PntPPRZ2l89MvqOBHvN+5hm\nQcNe0c6Asi/8j9cbQjSEipx64vi/OlN0MHG0y+ee0dyfhNj0ExNoIrgIkKN9i+oZ\nHYzXejfXS5rM7i3yUEGeiy9+Z3kKFs52HzxJdd70pZsEc0FaYoPsVsOLfCcRqfZG\nB/QiqM2Enidn3UZiKv87pIC9OX88VmSjPHobg33gyCHw+yrrJ15nfTcgBeOKLN7q\nfUGPlPe1AgMBAAECggEACDeNw9T+5s99gUtbi97UhfeXCP0OnVtMwANJMDIXs2Gq\nETOYjYlyPw3cjfMhgCbOts+bQY0BuvYMwCJUpBZsFVCaxNk93gBCXpjEGJXrwcJP\nR/ZY389tURS81Q4rweuMg8xjWBP9jQc1u7irBgT/BM6UgAej/4nCeTJT9Y2cy5Xr\ntpHEduFZr5HiuszXagQRDBBLPgixsvMZxZAl1YbEjWmNwG2cpbYmWwznLJsJt7lT\nS6mFWjdpTUTLJmIpgVjSyHksQp3M4t8iJ6TSOu95Cxkpn6RO8YjwjfpCiyzrWYfO\nObrF4oKOu4zfBJAwA13fAG9RVr3WrahbnpQKVjxl9QKBgQC+g4ON3SczirKDu0KO\ni+7gqubEkjNHfRm5y0n4/whq6KC9en6n6hEdOstbQ5TJ2MNMxez6uMWPagy4xz88\nEbpLt7Ri5+gAdQfI0hJzRWr6MlV37vGpzdpFCuttIwZ1F717p0scW0Ae6GpwF3QL\nrCrSRmZSG33GA+y4dqSB3Z0S4wKBgQC7Zlj4Ab256wUj1b3k6k3QvkkcUck+HLBN\nFgXYIG4OXnNjscKaKkVDeEH+zHNao8dhKedTeDbVSLfNs6RxCTqKx2tQwT/Txn4E\nbgU1/bUAsneunDVO/tlz5O5YT3cJ+wTHTzm41n8WsvdBIQJUkLZNDA1SsiOYHWR9\nPWLdYMWWhwKBgC/Vh4dsGranQXEv6GMwIVdJsc1zQ+rUL0xmDXm2Vx+4rvtEMV7p\nt0hWhc6xZj9T7J1vKLQ/BmOe5fjTFj532QW/50vaHHdY6w5yKG3G5ThSwQDu/sB6\nzi39suThIXLu9gWBGKvTAYOBKZBhYyK3JL1NLc2511eLjrk2GNH+mbyvAoGAPUuQ\nti37nKAeokX7QrDQmwJib3zg0gwYLl6RssuIs/J405cFC9/fn93p2CmPYYpIYKOQ\nImEjrkeGtyWXF9Ho8BOiKlvLQL2f4lsKIUrGtV+qfdZiKWB6R8oNm50CVqVgPsDP\nJIIkN4x6Czd8x6Q9vJ3AjdfuhIa4o648dCR+/GkCgYEAhGKT8/NdkeBxmoOucLao\nPPxS2pq+hq21pUA3FYhNlNMs1IpdZfWd11OS1dYZVPnItFqS/XvtY+eD3+Up7E7v\nYxFPAGYddp0+WKtBTi/XaOz8dXa3R+byQ5iEHSdwe09dJi4b38VdIsXYToeyFaD0\ngplN1rPMfV9F9WnL00FDnR8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "dialogflow-access@g-chatbot-for-food-delive-qo9m.iam.gserviceaccount.com",
+  "client_id": "105543954505732875821",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflow-access%40g-chatbot-for-food-delive-qo9m.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
