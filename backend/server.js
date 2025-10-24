@@ -19,7 +19,7 @@ app.use("/api/cart",cartRouter)
 app.use("/api/order",orderRouter)
 app.use('/dialogflow', chatbotRouter); 
 
-//DB connextion 
+//DB connetion 
 connectDB();
 
 //api endpoints

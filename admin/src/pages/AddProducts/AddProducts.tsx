@@ -3,7 +3,6 @@ import './AddProducts.css';
 // import { IoIosAddCircleOutline } from "react-icons/io";
 // import { FaListUl } from "react-icons/fa6";
 import upload_area from '../../assets/upload-area.png';
-import { MdDescription } from 'react-icons/md';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 

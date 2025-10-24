@@ -1,0 +1,53 @@
+version: '3.8'
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+  admin:
+    build: ./admin
+    ports:
+      - "3001:80"  
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      MONGO_URI: mongodb://mongo:27017/application_web_food_delivery
+    depends_on:
+      - mongo
+
+  chatbot:
+    build: ./chatbot
+    ports:
+      - "8000:8000"
+    environment:
+      DB_HOST: mongo
+      DB_USER: root
+      DB_PASSWORD: example
+      DB_NAME: application_web_food_delivery
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:6
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+
+ 
+
+volumes:
+  mongo-data:
+networks:
+  mern-app:
+    driver: bridge
