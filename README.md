@@ -23,7 +23,7 @@ Le projet est structuré en **4 dossiers principaux** :
 ---
 
 ## Architecture du projet
-
+```bash
 project-root/
 │
 ├── frontend/       # Interface utilisateur
@@ -31,7 +31,9 @@ project-root/
 ├── admin/          # Tableau de bord administrateur
 └── chatbot/        # Intégration Dialogflow
 
+```
+
 <img width="566" height="322" alt="Capture d&#39;écran 2026-02-22 234537" src="https://github.com/user-attachments/assets/05a4d877-46b0-4ebf-b164-9ba34aaa02fd" />
 
-<img width="783" height="451" alt="Capture d&#39;écran 2026-02-22 234419" src="https://github.com/user-attachments/assets/351f9eed-f514-4269-b391-2f0a322d42e4" />
+<img width="566" height="322" alt="Capture d&#39;écran 2026-02-22 234419" src="https://github.com/user-attachments/assets/351f9eed-f514-4269-b391-2f0a322d42e4" />
 
